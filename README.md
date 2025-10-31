@@ -2,7 +2,7 @@
 
 ## Overview
 
-  - React component library built using TypeScript and Storybook. Contains 13 components with default and disabled states.
+React TypeScript component library with automated code quality checks and pre-commit hooks. Built with Storybook, featuring 13 components with comprehensive testing and linting.
 
 ## Included Components
 
@@ -23,33 +23,69 @@
 ## Prerequisites
   - Docker Desktop
   - Node.js
+  - Git
+
+## Quality Tools for Code
+
+### Husky Pre-commit
+Runs before every commit:
+  - Prettier format
+  - ESLint checks
+  - Unit tests
+
+### Quality Commands
+
+#### Format Code
+```bash
+npm run format
+```
+
+#### Check Format
+```bash
+npm run format:check
+```
+
+#### Run Linter
+```bash
+npm run lint
+```
+
+#### Fix Lint Issues
+```bash
+npm run lint:fix
+```
+
+## CI/CD Pipeline
+GitHub Actions that run automatically on push:
+  - Formatting checks
+  - Linting
+  - Unit Tests
+  - Storybook build
 
 ## Running the Application With Docker
 
 ### Build Docker Image
 ```bash
-docker build -t sontag_kyle_coding_assignment12 .
+docker build -t sontag_kyle_coding_assignment13 .
 ```
 
 ### Run Container
 ```bash
-docker run -d -p 8083:8083 --name sontag_kyle_coding_assignment12 sontag_kyle_coding_assignment12
+docker run -d -p 8018:8018 --name sontag_kyle_coding_assignment13 sontag_kyle_coding_assignment13
 ```
-
-  - Runs the container locally on port 8083
 
 ### Access the Application
 
-  - Open browser and navigate to http://localhost:8083 to see Storybook interface with components
+Open browser and navigate to http://localhost:8018
 
-### Stop the container
+### Stop the Container
 ```bash
-docker stop sontag_kyle_coding_assignment12
+docker stop sontag_kyle_coding_assignment13
 ```
 
 ### Remove the Container
 ```bash
-docker rm sontag_kyle_coding_assignment12
+docker rm sontag_kyle_coding_assignment13
 ```
 
 ### View Container While Running
