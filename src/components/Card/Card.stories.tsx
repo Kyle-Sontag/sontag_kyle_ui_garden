@@ -5,8 +5,8 @@ const meta: Meta<typeof Card> = {
   title: 'Components/Card',
   component: Card,
   argTypes: {
-    backgroundColor: { control: 'color'},
-    disabled: { control: 'boolean'},
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
   },
 };
 
@@ -18,7 +18,7 @@ export const Default: Story = {
     disabled: false,
     title: 'Card Title',
     content: 'This is the content for the card',
-    imageUrl: 'https://placehold.co/400x200'
+    imageUrl: 'https://placehold.co/400x200',
   },
 };
 
@@ -36,5 +36,5 @@ export const WithoutImage: Story = {
     disabled: false,
     title: 'Card With no Image',
     content: 'This is a card without an image',
-  }
-}
+  },
+};

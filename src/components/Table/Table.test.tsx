@@ -19,7 +19,7 @@ describe('Table', () => {
 
   test('changes background colour when disabled', () => {
     const { rerender } = render(
-      <Table backgroundColor="#ffffff" >
+      <Table backgroundColor="#ffffff">
         <tbody>
           <tr>
             <td>Test</td>
@@ -32,7 +32,7 @@ describe('Table', () => {
     expect(element).toHaveStyle('background-color: #ffffff');
 
     rerender(
-      <Table backgroundColor="#ffffff" disabled={true} >
+      <Table backgroundColor="#ffffff" disabled={true}>
         <tbody>
           <tr>
             <td>Test</td>

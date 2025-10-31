@@ -8,9 +8,10 @@ interface StyledCardProps {
 }
 
 const StyledCard = styled.div<StyledCardProps>`
-  background-color: ${props => props.$disabled ? '#cccccc' : props.$backgroundColor || '#ffffff'};
-  cursor: ${props => props.$disabled ? 'not-allowed' : 'default'};
-  opacity: ${props => props.$disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.$disabled ? '#cccccc' : props.$backgroundColor || '#ffffff'};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'default')};
+  opacity: ${props => (props.$disabled ? 0.6 : 1)};
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
@@ -52,7 +53,14 @@ const StyledCard = styled.div<StyledCardProps>`
   }
 `;
 
-export const Card: React.FC<CardProps> = ({disabled = false, backgroundColor, title, content, imageUrl, ...props}) => {
+export const Card: React.FC<CardProps> = ({
+  disabled = false,
+  backgroundColor,
+  title,
+  content,
+  imageUrl,
+  ...props
+}) => {
   return (
     <StyledCard
       $disabled={disabled}

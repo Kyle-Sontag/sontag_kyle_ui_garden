@@ -5,13 +5,13 @@ const meta: Meta<typeof TableHeader> = {
   title: 'Components/Table/TableHeader',
   component: TableHeader,
   argTypes: {
-    backgroundColor: { control: 'color'},
-    disabled: { control: 'boolean'},
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
   },
   decorators: [
-    (Story) => (
+    Story => (
       <table>
-          <Story />
+        <Story />
       </table>
     ),
   ],

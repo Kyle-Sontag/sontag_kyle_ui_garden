@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Table } from './Table';
-import { TableHeader } from './TableHeader/TableHeader'
-import { TableFooter } from './TableFooter/TableFooter'
-import { TableRow } from './TableRow/TableRow'
-import {TableCell} from './TableCell/TableCell'
+import { TableHeader } from './TableHeader/TableHeader';
+import { TableFooter } from './TableFooter/TableFooter';
+import { TableRow } from './TableRow/TableRow';
+import { TableCell } from './TableCell/TableCell';
 
 const meta: Meta<typeof Table> = {
   title: 'Components/Table',
   component: Table,
   argTypes: {
-    backgroundColor: { control: 'color'},
-    disabled: { control: 'boolean'},
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
   },
 };
 
@@ -43,7 +43,7 @@ export const Default: Story = {
           <td colSpan={3}>2 Entries</td>
         </TableFooter>
       </>
-    )
+    ),
   },
 };
 
@@ -66,6 +66,6 @@ export const Disabled: Story = {
           <td colSpan={2}>Disbaled Data</td>
         </TableFooter>
       </>
-    )
+    ),
   },
 };

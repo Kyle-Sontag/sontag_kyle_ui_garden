@@ -5,8 +5,8 @@ const meta: Meta<typeof HeroImage> = {
   title: 'Components/HeroImage',
   component: HeroImage,
   argTypes: {
-    backgroundColor: { control: 'color'},
-    disabled: { control: 'boolean'},
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
   },
 };
 
@@ -38,5 +38,5 @@ export const WithoutText: Story = {
     disabled: false,
     src: 'https://placehold.co/1200x400',
     alt: 'Hero Image With no Text',
-    }
-}
+  },
+};

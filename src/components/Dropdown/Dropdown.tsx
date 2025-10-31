@@ -8,9 +8,10 @@ interface StyledDropdownProps {
 }
 
 const StyledDropdown = styled.select<StyledDropdownProps>`
-  background-color: ${props => props.$disabled ? '#cccccc' : props.$backgroundColor || '#ffffff'};
-  cursor: ${props => props.$disabled ? 'not-allowed' : 'pointer'};
-  opacity: ${props => props.$disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.$disabled ? '#cccccc' : props.$backgroundColor || '#ffffff'};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${props => (props.$disabled ? 0.6 : 1)};
   padding: 10px 15px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -30,7 +31,15 @@ const StyledDropdown = styled.select<StyledDropdownProps>`
   }
 `;
 
-export const Dropdown: React.FC<DropdownProps> = ({disabled = false, backgroundColor, options, placeholder = 'Select option', value, onChange, ...props}) => {
+export const Dropdown: React.FC<DropdownProps> = ({
+  disabled = false,
+  backgroundColor,
+  options,
+  placeholder = 'Select option',
+  value,
+  onChange,
+  ...props
+}) => {
   return (
     <StyledDropdown
       $disabled={disabled}
@@ -41,9 +50,13 @@ export const Dropdown: React.FC<DropdownProps> = ({disabled = false, backgroundC
       data-testid="dropdown"
       {...props}
     >
-      <option value="" disabled>{placeholder}</option>
+      <option value="" disabled>
+        {placeholder}
+      </option>
       {options.map((option, index) => (
-        <option key={index} value={option}>{option}</option>
+        <option key={index} value={option}>
+          {option}
+        </option>
       ))}
     </StyledDropdown>
   );

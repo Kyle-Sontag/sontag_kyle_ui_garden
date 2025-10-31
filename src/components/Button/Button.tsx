@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { ButtonProps } from './Button.types';
 
 const StyledButton = styled.button<ButtonProps>`
-  background-color: ${props => props.disabled ? '#cccccc' : props.backgroundColor || '#007bff'};
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  opacity: ${props => props.disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.disabled ? '#cccccc' : props.backgroundColor || '#007bff'};
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${props => (props.disabled ? 0.6 : 1)};
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -19,13 +20,13 @@ const StyledButton = styled.button<ButtonProps>`
   }
 `;
 
-export const Button: React.FC<ButtonProps> = ({disabled = false, backgroundColor, children, ...props}) => {
+export const Button: React.FC<ButtonProps> = ({
+  disabled = false,
+  children,
+  ...props
+}) => {
   return (
-    <StyledButton
-      disabled={disabled}
-      data-testid="button"
-      {...props}
-    >
+    <StyledButton disabled={disabled} data-testid="button" {...props}>
       {children}
     </StyledButton>
   );

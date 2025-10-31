@@ -10,9 +10,10 @@ interface StyledImgWrapperProps {
 }
 
 const StyledImgWrapper = styled.div<StyledImgWrapperProps>`
-  background-color: ${props => props.$disabled ? '#cccccc' : props.$backgroundColor || 'transparent'};
-  cursor: ${props => props.$disabled ? 'not-allowed' : 'default'};
-  opacity: ${props => props.$disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.$disabled ? '#cccccc' : props.$backgroundColor || 'transparent'};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'default')};
+  opacity: ${props => (props.$disabled ? 0.6 : 1)};
   border-radius: 4px;
   display: inline-block;
   overflow: hidden;
@@ -32,7 +33,15 @@ const StyledImgWrapper = styled.div<StyledImgWrapperProps>`
   }
 `;
 
-export const Img: React.FC<ImgProps> = ({disabled = false, backgroundColor, src, alt, width, height, ...props}) => {
+export const Img: React.FC<ImgProps> = ({
+  disabled = false,
+  backgroundColor,
+  src,
+  alt,
+  width,
+  height,
+  ...props
+}) => {
   return (
     <StyledImgWrapper
       $disabled={disabled}

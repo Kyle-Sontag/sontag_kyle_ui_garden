@@ -5,11 +5,11 @@ const meta: Meta<typeof Text> = {
   title: 'Components/Text',
   component: Text,
   argTypes: {
-    backgroundColor: { control: 'color'},
-    color: { control: 'color'},
-    disabled: { control: 'boolean'},
-    fontSize: { control: 'text'},
-    fontWeight: { control: 'text'},
+    backgroundColor: { control: 'color' },
+    color: { control: 'color' },
+    disabled: { control: 'boolean' },
+    fontSize: { control: 'text' },
+    fontWeight: { control: 'text' },
   },
 };
 
@@ -22,7 +22,7 @@ export const Default: Story = {
     children: 'This is text',
     fontSize: '16px',
     fontWeight: '400',
-    color: '#333333'
+    color: '#333333',
   },
 };
 

@@ -5,9 +5,9 @@ const meta: Meta<typeof RadioButton> = {
   title: 'Components/RadioButton',
   component: RadioButton,
   argTypes: {
-    backgroundColor: { control: 'color'},
-    disabled: { control: 'boolean'},
-    checked: {control: 'boolean'},
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
+    checked: { control: 'boolean' },
   },
 };
 

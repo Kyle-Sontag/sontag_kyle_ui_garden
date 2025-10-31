@@ -8,9 +8,10 @@ interface StyledTableProps {
 }
 
 const StyledTable = styled.table<StyledTableProps>`
-  background-color: ${props => props.$disabled ? '#cccccc' : props.$backgroundColor || '#ffffff'};
-  cursor: ${props => props.$disabled ? 'not-allowed' : 'default'};
-  opacity: ${props => props.$disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.$disabled ? '#cccccc' : props.$backgroundColor || '#ffffff'};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'default')};
+  opacity: ${props => (props.$disabled ? 0.6 : 1)};
   border-collapse: collapse;
   width: 100%;
   border: 1px solid #ddd;
@@ -20,7 +21,12 @@ const StyledTable = styled.table<StyledTableProps>`
   }
 `;
 
-export const Table: React.FC<TableProps> = ({disabled = false, backgroundColor, children, ...props}) => {
+export const Table: React.FC<TableProps> = ({
+  disabled = false,
+  backgroundColor,
+  children,
+  ...props
+}) => {
   return (
     <StyledTable
       $disabled={disabled}

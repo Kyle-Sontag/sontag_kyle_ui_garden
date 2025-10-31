@@ -5,9 +5,9 @@ const meta: Meta<typeof Label> = {
   title: 'Components/Label',
   component: Label,
   argTypes: {
-    backgroundColor: { control: 'color'},
-    disabled: { control: 'boolean'},
-    fontSize: { control: 'text'},
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
+    fontSize: { control: 'text' },
   },
 };
 

@@ -8,9 +8,10 @@ interface StyledTableCellProps {
 }
 
 const StyledTableCell = styled.td<StyledTableCellProps>`
-  background-color: ${props => props.$disabled ? '#cccccc' : props.$backgroundColor || 'transparent'};
-  cursor: ${props => props.$disabled ? 'not-allowed' : 'default'};
-  opacity: ${props => props.$disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.$disabled ? '#cccccc' : props.$backgroundColor || 'transparent'};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'default')};
+  opacity: ${props => (props.$disabled ? 0.6 : 1)};
   padding: 12px;
   border: 1px solid #ddd;
   text-align: left;
@@ -21,7 +22,12 @@ const StyledTableCell = styled.td<StyledTableCellProps>`
   }
 `;
 
-export const TableCell: React.FC<TableCellProps> = ({disabled = false, backgroundColor, children, ...props}) => {
+export const TableCell: React.FC<TableCellProps> = ({
+  disabled = false,
+  backgroundColor,
+  children,
+  ...props
+}) => {
   return (
     <StyledTableCell
       $disabled={disabled}

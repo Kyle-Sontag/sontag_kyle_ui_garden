@@ -10,12 +10,25 @@ describe('Img', () => {
   });
 
   test('changes background colour when disabled', () => {
-    const { rerender } = render(<Img src="https://placehold.co/400x300" alt="Test Image" backgroundColor="transparent"/>);
+    const { rerender } = render(
+      <Img
+        src="https://placehold.co/400x300"
+        alt="Test Image"
+        backgroundColor="transparent"
+      />
+    );
     const element = screen.getByTestId('img');
 
     expect(element).toHaveStyle('background-color: transparent');
 
-    rerender(<Img src="https://placehold.co/400x300" alt="Test Image" backgroundColor="transparent" disabled={true} />);
+    rerender(
+      <Img
+        src="https://placehold.co/400x300"
+        alt="Test Image"
+        backgroundColor="transparent"
+        disabled={true}
+      />
+    );
     expect(element).toHaveStyle('background-color: #cccccc');
   });
 });

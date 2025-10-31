@@ -9,9 +9,10 @@ interface StyledLabelProps {
 }
 
 const StyledLabel = styled.label<StyledLabelProps>`
-  background-color: ${props => props.$disabled ? '#cccccc' : props.$backgroundColor || '#333333'};
-  cursor: ${props => props.$disabled ? 'not-allowed' : 'default'};
-  opacity: ${props => props.$disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.$disabled ? '#cccccc' : props.$backgroundColor || '#333333'};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'default')};
+  opacity: ${props => (props.$disabled ? 0.6 : 1)};
   padding: 5px 10px;
   border-radius: 4px;
   color: white;
@@ -25,7 +26,14 @@ const StyledLabel = styled.label<StyledLabelProps>`
   }
 `;
 
-export const Label: React.FC<LabelProps> = ({disabled = false, backgroundColor, children, htmlFor, fontSize, ...props}) => {
+export const Label: React.FC<LabelProps> = ({
+  disabled = false,
+  backgroundColor,
+  children,
+  htmlFor,
+  fontSize,
+  ...props
+}) => {
   return (
     <StyledLabel
       $disabled={disabled}

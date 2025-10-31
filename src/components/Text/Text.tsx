@@ -11,9 +11,10 @@ interface StyledTextProps {
 }
 
 const StyledText = styled.span<StyledTextProps>`
-  background-color: ${props => props.$disabled ? '#cccccc' : props.$backgroundColor || 'transparent'};
-  cursor: ${props => props.$disabled ? 'not-allowed' : 'default'};
-  opacity: ${props => props.$disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.$disabled ? '#cccccc' : props.$backgroundColor || 'transparent'};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'default')};
+  opacity: ${props => (props.$disabled ? 0.6 : 1)};
   padding: 2px 5px;
   border-radius: 4px;
   color: ${props => props.$color || '#333333'};
@@ -27,7 +28,15 @@ const StyledText = styled.span<StyledTextProps>`
   }
 `;
 
-export const Text: React.FC<TextProps> = ({disabled = false, backgroundColor, children, fontSize, fontWeight, color, ...props}) => {
+export const Text: React.FC<TextProps> = ({
+  disabled = false,
+  backgroundColor,
+  children,
+  fontSize,
+  fontWeight,
+  color,
+  ...props
+}) => {
   return (
     <StyledText
       $disabled={disabled}

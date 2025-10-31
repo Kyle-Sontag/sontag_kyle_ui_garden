@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { TableRow } from './TableRow';
-import { TableCell } from '../TableCell/TableCell'
+import { TableCell } from '../TableCell/TableCell';
 
 const meta: Meta<typeof TableRow> = {
   title: 'Components/Table/TableRow',
   component: TableRow,
   argTypes: {
-    backgroundColor: { control: 'color'},
-    disabled: { control: 'boolean'},
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
   },
   decorators: [
-    (Story) => (
+    Story => (
       <table>
         <tbody>
-            <Story />
+          <Story />
         </tbody>
       </table>
     ),

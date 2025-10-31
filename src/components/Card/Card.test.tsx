@@ -10,12 +10,25 @@ describe('Card', () => {
   });
 
   test('changes background colour when disabled', () => {
-    const { rerender } = render(<Card title="Test Card" content="Test Content" backgroundColor="#ffffff"/>);
+    const { rerender } = render(
+      <Card
+        title="Test Card"
+        content="Test Content"
+        backgroundColor="#ffffff"
+      />
+    );
     const element = screen.getByTestId('card');
 
     expect(element).toHaveStyle('background-color: #ffffff');
 
-    rerender(<Card title="Test Card" content="Test Content" backgroundColor="#ffffff" disabled={true}/>);
+    rerender(
+      <Card
+        title="Test Card"
+        content="Test Content"
+        backgroundColor="#ffffff"
+        disabled={true}
+      />
+    );
     expect(element).toHaveStyle('background-color: #cccccc');
   });
 });

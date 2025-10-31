@@ -8,12 +8,13 @@ interface StyledTableRowProps {
 }
 
 const StyledTableRow = styled.tr<StyledTableRowProps>`
-  background-color: ${props => props.$disabled ? '#cccccc' : props.$backgroundColor || 'transparent'};
-  cursor: ${props => props.$disabled ? 'not-allowed' : 'default'};
-  opacity: ${props => props.$disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.$disabled ? '#cccccc' : props.$backgroundColor || 'transparent'};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'default')};
+  opacity: ${props => (props.$disabled ? 0.6 : 1)};
 
   &:hover {
-    background-color: ${props => props.$disabled ? '#cccccc' : '#f5f5f5'};
+    background-color: ${props => (props.$disabled ? '#cccccc' : '#f5f5f5')};
   }
 
   @media (max-width: 768px) {
@@ -21,7 +22,12 @@ const StyledTableRow = styled.tr<StyledTableRowProps>`
   }
 `;
 
-export const TableRow: React.FC<TableRowProps> = ({disabled = false, backgroundColor, children, ...props}) => {
+export const TableRow: React.FC<TableRowProps> = ({
+  disabled = false,
+  backgroundColor,
+  children,
+  ...props
+}) => {
   return (
     <StyledTableRow
       $disabled={disabled}

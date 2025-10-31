@@ -8,9 +8,10 @@ interface StyledHeroImageProps {
 }
 
 const StyledHeroImage = styled.div<StyledHeroImageProps>`
-  background-color: ${props => props.$disabled ? '#cccccc' : props.$backgroundColor || '#000000'};
-  cursor: ${props => props.$disabled ? 'not-allowed' : 'default'};
-  opacity: ${props => props.$disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.$disabled ? '#cccccc' : props.$backgroundColor || '#000000'};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'default')};
+  opacity: ${props => (props.$disabled ? 0.6 : 1)};
   position: relative;
   width: 100%;
   height: 400px;
@@ -58,7 +59,15 @@ const StyledHeroImage = styled.div<StyledHeroImageProps>`
   }
 `;
 
-export const HeroImage: React.FC<HeroImageProps> = ({disabled = false, backgroundColor, title, subtitle, src, alt, ...props}) => {
+export const HeroImage: React.FC<HeroImageProps> = ({
+  disabled = false,
+  backgroundColor,
+  title,
+  subtitle,
+  src,
+  alt,
+  ...props
+}) => {
   return (
     <StyledHeroImage
       $disabled={disabled}

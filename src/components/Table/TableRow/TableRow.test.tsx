@@ -21,7 +21,7 @@ describe('TableRow', () => {
     const { rerender } = render(
       <table>
         <tbody>
-          <TableRow backgroundColor="transparent" >
+          <TableRow backgroundColor="transparent">
             <td>Test</td>
           </TableRow>
         </tbody>

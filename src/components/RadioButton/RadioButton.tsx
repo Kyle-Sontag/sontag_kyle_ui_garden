@@ -8,17 +8,18 @@ interface StyledRadioButtonProps {
 }
 
 const StyledRadioButton = styled.label<StyledRadioButtonProps>`
-  background-color: ${props => props.$disabled ? '#cccccc' : props.$backgroundColor || 'transparent'};
-  cursor: ${props => props.$disabled ? 'not-allowed' : 'pointer'};
-  opacity: ${props => props.$disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.$disabled ? '#cccccc' : props.$backgroundColor || 'transparent'};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${props => (props.$disabled ? 0.6 : 1)};
   display: inline-flex;
   align-items: center;
   padding: 8px 12px;
   border-radius: 4px;
 
-  input[type="radio"] {
+  input[type='radio'] {
     margin-right: 8px;
-    cursor: ${props => props.$disabled ? 'not-allowed' : 'pointer'};
+    cursor: ${props => (props.$disabled ? 'not-allowed' : 'pointer')};
     width: 18px;
     height: 18px;
   }
@@ -31,7 +32,7 @@ const StyledRadioButton = styled.label<StyledRadioButtonProps>`
   @media (max-width: 768px) {
     padding: 6px 10px;
 
-    input[type="radio"] {
+    input[type='radio'] {
       width: 16px;
       height: 16px;
     }
@@ -42,7 +43,16 @@ const StyledRadioButton = styled.label<StyledRadioButtonProps>`
   }
 `;
 
-export const RadioButton: React.FC<RadioButtonProps> = ({disabled = false, backgroundColor, label, name, value, checked = false, onChange, ...props}) => {
+export const RadioButton: React.FC<RadioButtonProps> = ({
+  disabled = false,
+  backgroundColor,
+  label,
+  name,
+  value,
+  checked = false,
+  onChange,
+  ...props
+}) => {
   return (
     <StyledRadioButton
       $disabled={disabled}

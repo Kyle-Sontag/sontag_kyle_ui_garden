@@ -10,12 +10,18 @@ describe('Label', () => {
   });
 
   test('changes background colour when disabled', () => {
-    const { rerender } = render(<Label backgroundColor="#333333">Test Label</Label>);
+    const { rerender } = render(
+      <Label backgroundColor="#333333">Test Label</Label>
+    );
     const element = screen.getByTestId('label');
 
     expect(element).toHaveStyle('background-color: #333333');
 
-    rerender(<Label backgroundColor="#333333" disabled={true}>Test Label</Label>);
+    rerender(
+      <Label backgroundColor="#333333" disabled={true}>
+        Test Label
+      </Label>
+    );
     expect(element).toHaveStyle('background-color: #cccccc');
   });
 });

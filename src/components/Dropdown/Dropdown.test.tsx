@@ -10,12 +10,23 @@ describe('Dropdown', () => {
   });
 
   test('changes background colour when disabled', () => {
-    const { rerender } = render(<Dropdown options={['Option1', 'Option2', 'Option3']} backgroundColor="#ffffff"/>);
+    const { rerender } = render(
+      <Dropdown
+        options={['Option1', 'Option2', 'Option3']}
+        backgroundColor="#ffffff"
+      />
+    );
     const element = screen.getByTestId('dropdown');
 
     expect(element).toHaveStyle('background-color: #ffffff');
 
-    rerender(<Dropdown options={['Option1', 'Option2', 'Option3']} backgroundColor="#ffffff" disabled={true}/>);
+    rerender(
+      <Dropdown
+        options={['Option1', 'Option2', 'Option3']}
+        backgroundColor="#ffffff"
+        disabled={true}
+      />
+    );
     expect(element).toHaveStyle('background-color: #cccccc');
   });
 });

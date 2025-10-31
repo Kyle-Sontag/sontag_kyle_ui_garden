@@ -10,12 +10,18 @@ describe('Text', () => {
   });
 
   test('changes background colour when disabled', () => {
-    const { rerender } = render(<Text backgroundColor="transparent">Test Text</Text>);
+    const { rerender } = render(
+      <Text backgroundColor="transparent">Test Text</Text>
+    );
     const element = screen.getByTestId('text');
 
     expect(element).toHaveStyle('background-color: transparent');
 
-    rerender(<Text backgroundColor="transparent" disabled={true}>Test Text</Text>);
+    rerender(
+      <Text backgroundColor="transparent" disabled={true}>
+        Test Text
+      </Text>
+    );
     expect(element).toHaveStyle('background-color: #cccccc');
   });
 });

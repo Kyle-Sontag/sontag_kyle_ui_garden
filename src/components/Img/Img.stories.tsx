@@ -5,10 +5,10 @@ const meta: Meta<typeof Img> = {
   title: 'Components/Img',
   component: Img,
   argTypes: {
-    backgroundColor: { control: 'color'},
-    disabled: { control: 'boolean'},
-    width: { control: 'text'},
-    height: { control: 'text'},
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
+    width: { control: 'text' },
+    height: { control: 'text' },
   },
 };
 
@@ -29,6 +29,6 @@ export const Disabled: Story = {
   args: {
     disabled: true,
     src: 'https://placehold.co/400x300',
-    alt: 'Disabled image'
+    alt: 'Disabled image',
   },
 };

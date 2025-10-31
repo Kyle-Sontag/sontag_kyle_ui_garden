@@ -22,7 +22,7 @@ describe('TableCell', () => {
       <table>
         <tbody>
           <tr>
-            <TableCell backgroundColor="transparent" >Test Cell</TableCell>
+            <TableCell backgroundColor="transparent">Test Cell</TableCell>
           </tr>
         </tbody>
       </table>
@@ -35,7 +35,9 @@ describe('TableCell', () => {
       <table>
         <tbody>
           <tr>
-            <TableCell backgroundColor="transparent" disabled={true} >Test Cell</TableCell>
+            <TableCell backgroundColor="transparent" disabled={true}>
+              Test Cell
+            </TableCell>
           </tr>
         </tbody>
       </table>

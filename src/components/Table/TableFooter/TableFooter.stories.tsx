@@ -5,11 +5,11 @@ const meta: Meta<typeof TableFooter> = {
   title: 'Components/Table/TableFooter',
   component: TableFooter,
   argTypes: {
-    backgroundColor: { control: 'color'},
-    disabled: { control: 'boolean'},
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
   },
   decorators: [
-    (Story) => (
+    Story => (
       <table>
         <Story />
       </table>

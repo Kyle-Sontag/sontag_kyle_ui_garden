@@ -8,9 +8,10 @@ interface StyledTableFooterProps {
 }
 
 const StyledTableFooter = styled.tfoot<StyledTableFooterProps>`
-  background-color: ${props => props.$disabled ? '#cccccc' : props.$backgroundColor || '#f0f0f0'};
-  cursor: ${props => props.$disabled ? 'not-allowed' : 'default'};
-  opacity: ${props => props.$disabled ? 0.6 : 1};
+  background-color: ${props =>
+    props.$disabled ? '#cccccc' : props.$backgroundColor || '#f0f0f0'};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'default')};
+  opacity: ${props => (props.$disabled ? 0.6 : 1)};
   font-weight: bold;
 
   td {
@@ -28,7 +29,12 @@ const StyledTableFooter = styled.tfoot<StyledTableFooterProps>`
   }
 `;
 
-export const TableFooter: React.FC<TableFooterProps> = ({disabled = false, backgroundColor, children, ...props}) => {
+export const TableFooter: React.FC<TableFooterProps> = ({
+  disabled = false,
+  backgroundColor,
+  children,
+  ...props
+}) => {
   return (
     <StyledTableFooter
       $disabled={disabled}
@@ -36,9 +42,7 @@ export const TableFooter: React.FC<TableFooterProps> = ({disabled = false, backg
       data-testid="table-footer"
       {...props}
     >
-      <tr>
-        {children}
-      </tr>
+      <tr>{children}</tr>
     </StyledTableFooter>
   );
 };

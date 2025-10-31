@@ -5,11 +5,11 @@ const meta: Meta<typeof TableCell> = {
   title: 'Components/Table/TableCell',
   component: TableCell,
   argTypes: {
-    backgroundColor: { control: 'color'},
-    disabled: { control: 'boolean'},
+    backgroundColor: { control: 'color' },
+    disabled: { control: 'boolean' },
   },
   decorators: [
-    (Story) => (
+    Story => (
       <table>
         <tbody>
           <tr>
