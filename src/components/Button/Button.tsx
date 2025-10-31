@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { ButtonProps } from './Button.types';
 
+// Test for hooks
+
 const StyledButton = styled.button<ButtonProps>`
   background-color: ${props =>
     props.disabled ? '#cccccc' : props.backgroundColor || '#007bff'};
