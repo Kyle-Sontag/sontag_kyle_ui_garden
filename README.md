@@ -13,7 +13,7 @@ React TypeScript component library with automated code quality checks and pre-co
   - Card
   - HeroImage
   - RadioButton
-  - DropDown
+  - Dropdown
   - Table
     * TableHeader
     * TableRow
@@ -24,6 +24,8 @@ React TypeScript component library with automated code quality checks and pre-co
   - Docker Desktop
   - Node.js
   - Git
+
+### Test
 
 ## Quality Tools for Code
 
